@@ -8,7 +8,9 @@
           <li><NuxtLink to="/about">About</NuxtLink></li>
           <li><NuxtLink to="/count">Count</NuxtLink></li>
           <li><NuxtLink to="/products" class="btn">Products</NuxtLink></li>
-          <li><NuxtLink to="/products/abc">Products abc</NuxtLink></li>
+          <li><NuxtLink to="/products/abc">Pdabc</NuxtLink></li>
+          <li v-if="!auth.isAuthenticate"><NuxtLink to="/login" class="">Login</NuxtLink></li>
+          <li v-else class="font-bold text-green-500"><NuxtLink to="/user" class="">User</NuxtLink></li>
         </ul>
       </nav>
     </header>
@@ -21,6 +23,7 @@
 <script setup>
   const count = useCount()
 
+  const auth = useAuth()
 </script>
 <style scoped>
   .router-link-exact-active {

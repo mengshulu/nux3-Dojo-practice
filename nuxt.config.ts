@@ -9,9 +9,9 @@ export default defineNuxtConfig({
   // global meta
   app: {
     head: {
-      title: 'Nuxt Dojo',
+      title: "Shu's Page",
       meta: [
-        { name: 'description', content: 'Everything about Nuxt 3' }
+        { name: 'description', content: 'Practice of nuxt3 , vue3 and typescript' }
       ],
       link: [
         { rel: 'stylesheet', href: 'https://fonts.googleapis.com/icon?family=Material+Icons' }

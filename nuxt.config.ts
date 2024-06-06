@@ -1,6 +1,9 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
-import 'dotenv/config'
-export default defineNuxtConfig({
+import 'dotenv/config';
+import type { NuxtConfig } from '@nuxt/types';
+
+const config: NuxtConfig = {
+  buildModules: ['@nuxt/typescript-build'],
   devtools: { enabled: true },
   modules: [
     '@nuxtjs/tailwindcss'
@@ -21,4 +24,6 @@ export default defineNuxtConfig({
   runtimeConfig: {
     currencyKey: process.env.CURRENCY_API_KEY
   }
-})
+};
+
+export default config;

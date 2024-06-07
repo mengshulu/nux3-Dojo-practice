@@ -28,6 +28,11 @@
       "@types/node"
     ]
   },
+  "include": [
+    "env.d.ts",
+    ".nuxt/nuxt.d.ts",
+    "**/*"
+  ],
   "exclude": [
     "node_modules"
   ]

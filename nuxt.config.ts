@@ -23,7 +23,8 @@ const config: NuxtConfig = {
   },
   runtimeConfig: {
     currencyKey: process.env.CURRENCY_API_KEY
-  }
+  },
+  css: ['./assets/css/reset.scss']
 };
 
 export default config;

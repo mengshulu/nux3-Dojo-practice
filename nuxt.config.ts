@@ -6,7 +6,8 @@ const config: NuxtConfig = {
   buildModules: ['@nuxt/typescript-build'],
   devtools: { enabled: true },
   modules: [
-    '@nuxtjs/tailwindcss'
+    '@nuxtjs/tailwindcss',
+    '@nuxt/content'
   ],
 
   // global meta

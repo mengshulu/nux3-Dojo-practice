@@ -23,12 +23,12 @@
         :url.sync="all_map_assets[current_map].url"
         :attribution="all_map_assets[current_map].attribution"
       />
-      <LGeoJson
+      <!-- <LGeoJson
         :geojson="geojson_little as GeoJsonObject"
         :visible="is_town_line_visible"
         :optionsStyle="town_style as L.StyleFunction"
       />
-      <LGeoJson :geojson="geojson_outline as GeoJsonObject" :options-style="style_method as L.StyleFunction" />
+      <LGeoJson :geojson="geojson_outline as GeoJsonObject" :options-style="style_method as L.StyleFunction" /> -->
     </LMap>
   </div>
 </template>
@@ -36,8 +36,8 @@
 <script setup lang="ts">
   import { latLng, latLngBounds } from 'leaflet';
   import { GeoJsonObject } from 'geojson';
-  import geojson_little from '../content/map/TOWNSHIP_geo.json';
-  import geojson_outline from '../content/map/coastline.json';
+  // import geojson_little from '../content/map/TOWNSHIP_geo.json';
+  // import geojson_outline from '../content/map/coastline.json';
 
   interface MAP_ZOOM {
     minZoom: number;

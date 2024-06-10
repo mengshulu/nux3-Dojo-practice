@@ -3,19 +3,20 @@
     <h1>目錄</h1>
     <hr>
     <div class="catalog">
-      <ul
-        v-for="(item, index) in list"
-        :key="`catalog_${index}`"
-        class="content"
-      >
-        <NuxtLink :to="item.id">
-          <li class="title">
+      <ul>
+        <li
+          v-for="(item, index) in list"
+          :key="`catalog_${index}`"
+          class="title"
+        >
+          <NuxtLink :to="item.id">
             <h2>{{ item.name }}</h2>
             <ul>
-              <li class="description"><p>{{ item.description }}</p></li>
+                <li class="description"><p>{{ item.description }}</p></li>
             </ul>
-          </li>
-        </NuxtLink>
+          </NuxtLink>
+        </li>
+
       </ul>
     </div>
     <!-- <p>電視台演唱會年輕人，真實苗栗開展，開通一是，製品十二處於各地陷入只要商務，夫妻註冊時間告訴我頁面光碟筆記本，上路重量普通還能你自己專區破解圖片學生就像，浙江簡歷剛才學會分析花園資源，美容航空事業，很。</p>
@@ -52,6 +53,11 @@
       id: 'map',
       name: 'Leaflet',
       description: '使用 Leaflet 繪製台灣地圖'
+    },
+    {
+      id: 'quill',
+      name: 'Quill',
+      description: '使用 Quill 客製化編輯器功能'
     }
   ] as LIST[]);
 </script>
@@ -59,8 +65,10 @@
 <style scoped lang="scss">
   .catalog {
     margin-top: var(--m-space);
-
-    .content {
+    
+    .title {
+      margin-left: var(--l-space);
+      list-style: auto;
       border-radius: var(--s-space);
       transition: background .4s, color .2s;
       
@@ -68,11 +76,6 @@
         color: #fff;
         background: var(--bg-hover);
       }
-    }
-
-    .title {
-      margin-left: var(--l-space);
-      list-style: auto;
     }
 
     .description {

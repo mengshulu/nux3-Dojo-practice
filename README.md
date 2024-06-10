@@ -62,7 +62,3 @@ yarn preview
 
 Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
 
-```bash
-# npm 解決 run dev 太慢問題
-npm run dev --host 172.0.0.1
-```

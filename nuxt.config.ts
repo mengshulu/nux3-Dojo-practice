@@ -7,7 +7,6 @@ const config: NuxtConfig = {
   devtools: { enabled: true },
   modules: [
     '@nuxtjs/tailwindcss',
-    '@nuxt/content',
     'nuxt3-leaflet'
   ],
 

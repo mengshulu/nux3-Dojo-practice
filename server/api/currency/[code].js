@@ -1,6 +1,7 @@
 export default defineEventHandler(async (event) => {
 
   const { code } = event.context.params
+  console.log('code: ', code);
 
   const { currencyKey } = useRuntimeConfig()
 

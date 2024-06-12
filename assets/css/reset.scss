@@ -41,4 +41,10 @@ h2 {
   --m-space: 20px;
   --l-space: 30px;
   --bg-hover: #c6c6c6;
+  --font-color: #6a6a6a;
+}
+
+.description {
+  margin: var(--s-space) 0;
+  color: var(--font-color);
 }

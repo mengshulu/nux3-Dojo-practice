@@ -22,6 +22,7 @@
   },
   "dependencies": {
     "@types/geojson": "^7946.0.14",
+    "@vueup/vue-quill": "^1.2.0",
     "dotenv": "^16.4.5",
     "quill": "^2.0.2"
   }

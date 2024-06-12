@@ -10,6 +10,10 @@ const config: NuxtConfig = {
     'nuxt3-leaflet'
   ],
 
+  plugins: [
+    { src: '~/plugins/quill.client.ts', mode: 'client' }
+  ],
+
   // global meta
   app: {
     head: {
@@ -18,12 +22,13 @@ const config: NuxtConfig = {
         { name: 'description', content: 'Practice of nuxt3 , vue3 and typescript' }
       ],
       link: [
-        { rel: 'stylesheet', href: 'https://fonts.googleapis.com/icon?family=Material+Icons' }
+        { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20,100,1,200' }
       ],
     }
   },
   runtimeConfig: {
-    currencyKey: process.env.CURRENCY_API_KEY
+    currencyKey: process.env.CURRENCY_API_KEY,
+    pixabayKey: process.env.PIXABAY_API_KEY
   },
   css: ['./assets/css/reset.scss']
 };

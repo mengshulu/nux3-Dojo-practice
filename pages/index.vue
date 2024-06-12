@@ -9,7 +9,7 @@
           :key="`catalog_${index}`"
           class="title"
         >
-          <NuxtLink :to="item.id">
+          <NuxtLink :to="`/${item.id}`">
             <h2>{{ item.name }}</h2>
             <ul>
                 <li class="description"><p>{{ item.description }}</p></li>

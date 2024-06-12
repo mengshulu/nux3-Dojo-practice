@@ -7,6 +7,7 @@
     >
       {{ map.description }}
     </button>
+    <ClientOnly>
     <LMap
       ref="leaflet_map"
       :minZoom="mapZoom.minZoom"
@@ -30,12 +31,15 @@
       />
       <LGeoJson :geojson="geojson_outline as GeoJsonObject" :options-style="style_method as L.StyleFunction" /> -->
     </LMap>
+
+    </ClientOnly>
   </div>
 </template>
 
 <script setup lang="ts">
-  import { latLng, latLngBounds } from 'leaflet';
-  import { GeoJsonObject } from 'geojson';
+  // import { latLng, latLngBounds } from 'leaflet'; // nuxt 會出現 window not found 問題
+  // 直接參考 nuxt-leaflet Document, 使用 array 替代
+  // import { GeoJsonObject } from 'geojson';
   // import geojson_little from '../content/map/TOWNSHIP_geo.json';
   // import geojson_outline from '../content/map/coastline.json';
 
@@ -86,7 +90,8 @@
     zoomSnap: 1
   }; // 左上方 zoom in, zoom out的縮放刻度
 
-  const maxBounds = latLngBounds(latLng(32, 110), latLng(10, 150));
+  // const maxBounds = latLngBounds(latLng(32, 110), latLng(10, 150));
+  const maxBounds = [[32, 110],[10, 150]];
 
   const markerLatLng = ref([23.8, 121.12]);
   const is_town_line_visible = ref(false);

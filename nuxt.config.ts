@@ -27,8 +27,14 @@ const config: NuxtConfig = {
     }
   },
   runtimeConfig: {
+    // server 端使用
     currencyKey: process.env.CURRENCY_API_KEY,
-    pixabayKey: process.env.PIXABAY_API_KEY
+    pixabayKey: process.env.PIXABAY_API_KEY,
+
+    // client 端使用
+    public: {
+      finnhubKey: process.env.FINNHUB_API_KEY
+    }
   },
   css: ['./assets/css/reset.scss']
 };

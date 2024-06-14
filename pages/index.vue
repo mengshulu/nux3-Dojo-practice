@@ -58,6 +58,11 @@
       id: 'quill',
       name: 'Quill',
       description: '使用 Quill 客製化編輯器功能'
+    },
+    {
+      id: 'ws',
+      name: 'Websocket',
+      description: '與 FREE realtime API for stocks Websocket 連線'
     }
   ] as LIST[]);
 </script>

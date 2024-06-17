@@ -14,6 +14,7 @@
     "@nuxt/typescript-build": "^3.0.2",
     "@nuxtjs/tailwindcss": "^6.7.2",
     "@types/leaflet": "^1.9.12",
+    "@types/lodash-es": "^4.17.12",
     "@types/node": "^18",
     "leaflet": "^1.9.4",
     "nuxt": "^3.5.2",

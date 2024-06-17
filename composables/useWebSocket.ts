@@ -1,15 +1,20 @@
 // composables/useWebSocket.ts
 import { ref, onMounted, onUnmounted } from 'vue';
 
-export function useWebSocket(url: string) {
-  const message = ref('');
-  const messages = ref<string[]>([]);
+export function useWebSocket(url: string, text: string) {
+  const messages = ref<any[]>([]);
   let socket: WebSocket | null = null;
 
   const sendMessage = () => {
-    if (socket && message.value) {
-      socket.send(message.value);
-      message.value = '';
+    if (socket && text) {
+      socket.send(text);
+    }
+  };
+
+  const closeWS = () => {
+    console.log('close ws');
+    if (socket) {
+      socket.close();
     }
   };
 
@@ -21,10 +26,12 @@ export function useWebSocket(url: string) {
       // socket.send(JSON.stringify({
       //   "op": "ping"
       // }));
+      sendMessage();
     };
 
     socket.onmessage = (msg) => {
-      console.log('onmessage', msg);
+      const res = JSON.parse(msg.data);
+      messages.value = res.data;
     };
 
     socket.onclose = (error) => {
@@ -44,8 +51,8 @@ export function useWebSocket(url: string) {
   });
 
   return {
-    message,
     messages,
     sendMessage,
+    closeWS
   };
 }

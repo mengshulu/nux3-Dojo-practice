@@ -11,7 +11,8 @@ const config: NuxtConfig = {
   ],
 
   plugins: [
-    { src: '~/plugins/quill.client.ts', mode: 'client' }
+    { src: '~/plugins/quill.client.ts', mode: 'client' },
+    { src: '~/plugins/echart.client.ts', mode: 'client' }
   ],
 
   // global meta

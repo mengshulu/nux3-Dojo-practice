@@ -72,9 +72,12 @@
     margin-top: var(--m-space);
     
     .title {
-      margin-left: var(--l-space);
-      list-style: auto;
+      margin: var(--l-space);
+      padding: var(--m-space);
       border-radius: var(--s-space);
+      border: 1px solid var(--bg-hover);
+      background: var(--bg);
+      box-shadow: 1px 1px 5px #000;
       transition: background .4s, color .2s;
       
       &:hover {
@@ -85,7 +88,6 @@
 
     .description {
       margin-left: var(--s-space);
-      list-style: circle;
     }
   }
 </style>

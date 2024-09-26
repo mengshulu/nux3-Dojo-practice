@@ -1,12 +1,11 @@
 <template>
-  <header class="shadow-sm bg-white">
+  <header class="shadow-sm bg-gray-300">
       <nav class="container mx-auto p-4 flex justify-between">
-        <NuxtLink to="/" class="font-bold">Shu</NuxtLink>
+        <NuxtLink to="/" class="text-gray-900">Shu</NuxtLink>
         <ul class="flex gap-4">
-          <li class="font-bold text-[blue]">Count {{ count }}</li>
           <li><NuxtLink to="/">Home</NuxtLink></li>
           <li><NuxtLink to="/about">About</NuxtLink></li>
-          <li><NuxtLink to="/count">Count</NuxtLink></li>
+          <li><NuxtLink to="/count">Count {{ count }}</NuxtLink></li>
           <li><NuxtLink to="/products" class="btn">Products</NuxtLink></li>
           <li><NuxtLink to="/products/abc">404</NuxtLink></li>
           <li v-if="!auth.isAuthenticate"><NuxtLink to="/login" class="">Login</NuxtLink></li>
@@ -27,6 +26,6 @@
 </script>
 <style scoped>
   .router-link-exact-active {
-    color: #12b488;
+    color: #64748b;
   }
 </style>

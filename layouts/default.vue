@@ -6,7 +6,7 @@
           <li><NuxtLink to="/">Home</NuxtLink></li>
           <li><NuxtLink to="/about">About</NuxtLink></li>
           <li><NuxtLink to="/count">Count {{ count }}</NuxtLink></li>
-          <li><NuxtLink to="/products" class="btn">Products</NuxtLink></li>
+          <li><NuxtLink to="/products">Products</NuxtLink></li>
           <li><NuxtLink to="/products/abc">404</NuxtLink></li>
           <li v-if="!auth.isAuthenticate"><NuxtLink to="/login" class="">Login</NuxtLink></li>
           <li v-else class="font-bold text-green-500"><NuxtLink to="/user" class="">User</NuxtLink></li>

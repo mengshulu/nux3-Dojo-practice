@@ -63,6 +63,11 @@
       id: 'ws',
       name: 'Websocket',
       description: '與 FREE realtime API for stocks Websocket 連線'
+    },
+    {
+      id: 'fontToPNG',
+      name: 'Font to PNG',
+      description: '選擇想使用的字體，並輸入想展現的文字，最後產生 PNG 圖片並下載下來吧！'
     }
   ] as LIST[]);
 </script>

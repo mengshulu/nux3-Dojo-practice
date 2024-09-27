@@ -20,9 +20,9 @@
     </div>
 </template>
 <script setup>
-  const count = useCount()
+  const count = useCount();
 
-  const auth = useAuth()
+  const auth = useAuth();
 </script>
 <style scoped>
   .router-link-exact-active {

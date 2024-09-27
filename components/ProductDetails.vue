@@ -10,7 +10,9 @@
         <h3 class="fint-bold border-b-2 mb-4 pb-2">Product description:</h3>
         <p class="mb-4 lg:mb-7">{{ product.description }}</p>
         <button class="btn flex">
-          <i class="material-icons mr-2">add_shopping_cart</i>
+          <span class="material-symbols-outlined">
+            add_shopping_cart
+          </span>
           <span>Add to cart</span>
         </button>
       </div>

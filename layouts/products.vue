@@ -1,7 +1,12 @@
 <template>
   <header class="shadow-sm bg-white">
-      <nav class="container mx-auto p-4">
+      <nav class="container mx-auto p-4 flex justify-between">
         <NuxtLink to="/products" class="font-bold">Nuxt Dojo Merge</NuxtLink>
+        <NuxtLink to="/">
+          <span class="material-symbols-outlined hover:text-zinc-300">
+            home
+          </span>
+        </NuxtLink>
       </nav>
     </header>
 

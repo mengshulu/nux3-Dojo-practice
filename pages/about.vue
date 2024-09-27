@@ -1,9 +1,28 @@
 <template>
   <div>
-    <h2>About</h2>
-    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Tempora modi ipsa obcaecati impedit rem quidem, earum minus optio sunt ipsum.</p>
-    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Tempora modi ipsa obcaecati impedit rem quidem, earum minus optio sunt ipsum.</p>
-    <div>{{ data }}</div>
+    <h2>About Currency Api</h2>
+    <a href="https://currencyapi.com/">currencyapi link</a>
+    <p>
+      當前與美金的換匯匯率
+    </p>
+    
+    <div class="select-box card p-6 m-8">
+      <label for="currency-select">Choose a contry:</label>
+
+      <select v-model="selected" class="card m-4 bg-gray-200" name="currencies" id="currency-select">
+        <option value="">--Please choose an option--</option>
+        <template
+          v-for="contry in currencies" 
+          :key="contry" 
+        >
+          <option :value="contry" >
+            {{ contry }}
+          </option>
+        </template>
+      </select>
+    </div>
+
+    <div v-for="data in currency" :key="data" class="card p-6 m-8">{{ data }}</div>
   </div>
 </template>
 
@@ -13,7 +32,23 @@
   //   body: { age: 30 }
   // })
 
-  const { data } = await useFetch('/api/currency/GBP');
+  const selected = ref('');
+  const currencyFetchData = ref({});
+
+  watch(selected,async () => {
+    const { data } = await useFetch('/api/currency/' + (selected.value || 'TWD'));
+    console.log(data);
+    currencyFetchData.value = data.value;
+  }, {
+    immediate: true
+  });
+  const currency = computed(() => {
+    const newData = Object.entries(currencyFetchData.value).map(([key, value]) => `${key}: ${value.value.toFixed(2)}`);
+    return newData;
+  });
+  const { data: fetchAllCurrencies } = await useFetch('/api/currency/all');
+  const currencies = computed(() => Object.keys(fetchAllCurrencies.value));
+
 </script>
 
 <style scoped>

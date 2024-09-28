@@ -28,7 +28,12 @@
   <template v-if="typeText">
     <p class="m-4">按下 To PNG 按鈕</p>
     <div class="card m-4 bg-gray-200">
-      <button class="btn m-2 bg-sky-900 hover:bg-cyan-500" @click="toPNG">To PNG</button>
+      <button :disabled="isLoading" class="btn m-2 bg-sky-900 hover:bg-cyan-500 disabled:bg-zinc-300" @click="toPNG">
+        <template v-if="!isLoading">To PNG</template>
+        <span v-else class="material-symbols-outlined">
+        hourglass_bottom
+        </span>
+      </button>
       <a 
         v-if="imgUrl"
         class="download-link btn m-2 bg-sky-900 hover:bg-cyan-500"
@@ -70,9 +75,11 @@ const pngNode = ref(null);
 const imgUrl = ref('');
 const typeText = ref('');
 const fileName = ref('');
+const isLoading = ref(false);
 let downloadCount = 0;
 
 const toPNG = () => {
+  isLoading.value = true;
   if (pngNode.value.firstElementChild) {
     console.log(pngNode.value.firstElementChild);
     pngNode.value.removeChild(pngNode.value.firstElementChild);
@@ -85,9 +92,11 @@ const toPNG = () => {
       img.src = dataUrl;
       imgUrl.value = dataUrl;
       pngNode.value.appendChild(img);
+      isLoading.value = false;
     })
     .catch(function (error) {
       console.error('oops, something went wrong!', error);
+      alert('oops, something went wrong!');
     });
 };
 

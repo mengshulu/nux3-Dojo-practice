@@ -1,14 +1,20 @@
 <template>
-  <h2>Websocket</h2>
+  <h2 class="mx-4">Websocket</h2>
+  <p class="m-4">稍待片刻，數據將即時更新</p>
   <!-- <button class="btn" @click="send">
     send
   </button> -->
 
-  <button class="btn" @click="close">
-    close
-  </button>
+  <div class="card mx-4 py-5 bg-gray-200">
+    <v-chart class="chart" :option="option" autoresize style="width: 100%; height: 400px;" />
+  </div>
 
-  <v-chart class="chart" :option="option" autoresize style="width: 100%; height: 400px;" />
+  <div class="card m-4 bg-gray-200 flex">
+    <p class="m-4">關閉 websocket</p>
+    <button class="btn bg-sky-900" @click="close">
+      close
+    </button>
+  </div>
 </template>
 
 <script setup lang="ts">

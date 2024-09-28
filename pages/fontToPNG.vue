@@ -19,7 +19,7 @@
   <p class="m-4">確認想產生圖片的文字：</p>
   <div class="card m-4">
     <div 
-      :class="[seletedFont, 'font-node']"
+      :class="[seletedFont, 'font-node text-7xl']"
       id="font-node"
       ref="fontNode"
     >{{ typeText }}</div>

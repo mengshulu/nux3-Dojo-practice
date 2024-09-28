@@ -1,10 +1,10 @@
 <template>
   <div class="mx-auto">
-    <div class="card my-7 flex pa-7 bg-gray-200 flex items-center">
-    <h5>{{ title }}</h5>
-      <button class="btn mx-5 bg-sky-900 hover:bg-cyan-500" @click="increment">Increment</button>
+    <div class="card my-5 pa-4 bg-gray-200 flex items-center flex-wrap">
+      <div class="w-full">{{ title }}</div>
+      <button class="btn m-2 bg-sky-900 hover:bg-cyan-500" @click="increment">Increment</button>
       <p>State  {{ count }}</p>
-      <button class="btn mx-5 bg-sky-900 hover:bg-cyan-500" @click="decrement">Decrement</button>
+      <button class="btn m-2 bg-sky-900 hover:bg-cyan-500" @click="decrement">Decrement</button>
     </div>
   </div>
 </template>

@@ -7,7 +7,7 @@
     <LazyCountDescription v-if="lock" title="v-if"/>
     <LazyCountCounter v-else title="v-else" />
     <component :is="MyComponent" title="Component tag"/>
-    <button class="btn my-7 bg-sky-900 hover:bg-cyan-500" @click="toggle">Toggle</button>
+    <button class="btn my-7" @click="toggle">Toggle</button>
     <p>v-if ,v-else 以及 component 標籤切換</p>
 
     <p class="font-bold my-5">Now at {{ route.name }} page!</p>

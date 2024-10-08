@@ -8,13 +8,13 @@ body {
 
 @layer components {
   .btn {
-    @apply bg-[#12b488] text-white px-3 py-2 rounded-md text-sm;
+    @apply text-white px-3 py-2 rounded-md text-sm m-2 bg-sky-900 hover:bg-cyan-500;
   }
   .card {
-    @apply p-3 rounded-md bg-white shadow-md h-full;
+    @apply p-3 rounded-md bg-white shadow-md h-full m-4 bg-gray-200 disabled:bg-zinc-300;
   }
   .input {
     @apply p-3 rounded-md bg-gray-50 shadow-md w-full my-5;
   }
 
-} 
+}

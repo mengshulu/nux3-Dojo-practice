@@ -9,7 +9,7 @@
     <div class="select-box card p-6 m-8">
       <label for="currency-select">Choose a contry:</label>
 
-      <select v-model="selected" class="card m-4 bg-gray-200" name="currencies" id="currency-select">
+      <select v-model="selected" class="card" name="currencies" id="currency-select">
         <option value="">--Please choose an option--</option>
         <template
           v-for="contry in currencies" 

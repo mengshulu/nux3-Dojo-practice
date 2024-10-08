@@ -5,13 +5,13 @@
     send
   </button> -->
 
-  <div class="card mx-4 py-5 bg-gray-200">
+  <div class="card mx-4 py-5">
     <v-chart class="chart" :option="option" autoresize style="width: 100%; height: 400px;" />
   </div>
 
-  <div class="card m-4 bg-gray-200 flex">
+  <div class="card flex">
     <p class="m-4">關閉 websocket</p>
-    <button class="btn bg-sky-900" @click="close">
+    <button class="btn" @click="close">
       close
     </button>
   </div>

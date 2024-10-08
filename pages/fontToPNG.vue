@@ -1,10 +1,10 @@
 <template>
-  <div class="card m-4 bg-gray-200">
+  <div class="card">
     <p>選擇你想使用的字型</p>
     <button
       v-for="item in fontList"
       :key="item.value"
-      :class="[item.value, 'btn m-2 bg-sky-900 hover:bg-cyan-500']"
+      :class="[item.value, 'btn']"
       @click="selectFont(item.value)"
     >
       {{ item.name }}
@@ -13,11 +13,11 @@
   <p class="mt-4 ml-4">寫點什麼:</p>
   <input 
     v-model="typeText"
-    class="card m-4 bg-gray-200"
+    class="card"
     placeholder="寫點什麼......"
   ></input>
   <p class="m-4">確認想產生圖片的文字：</p>
-  <div class="card m-4">
+  <div class="card">
     <div 
       :class="[seletedFont, 'font-node text-7xl']"
       id="font-node"
@@ -27,8 +27,8 @@
   
   <template v-if="typeText">
     <p class="m-4">按下 To PNG 按鈕</p>
-    <div class="card m-4 bg-gray-200">
-      <button :disabled="isLoading" class="btn m-2 bg-sky-900 hover:bg-cyan-500 disabled:bg-zinc-300" @click="toPNG">
+    <div class="card">
+      <button :disabled="isLoading" class="btn" @click="toPNG">
         <template v-if="!isLoading">To PNG</template>
         <span v-else class="material-symbols-outlined">
         hourglass_bottom
@@ -36,7 +36,7 @@
       </button>
       <a 
         v-if="imgUrl"
-        class="download-link btn m-2 bg-sky-900 hover:bg-cyan-500"
+        class="download-link btn"
         :href="imgUrl"
         :download="fileName"
         @click="handleDownloadCount"
@@ -48,7 +48,7 @@
 
   <div v-show="imgUrl">
     <p class="m-4">圖片產生在下方</p>
-    <div id="png-node" ref="pngNode" class="png-node card m-4 p-4"></div>
+    <div id="png-node" ref="pngNode" class="png-node card p-4"></div>
   </div>
 </template>
 

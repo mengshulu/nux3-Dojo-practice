@@ -1,5 +1,5 @@
 <template>
-  <div class="card pa-7 bg-gray-200">
+  <div class="card pa-7">
     <h5>{{ title }}</h5>
     <p>與 Layout 的 Count 綁定</p>
   </div>

@@ -68,6 +68,10 @@
       id: 'fontToPNG',
       name: 'Font to PNG',
       description: '選擇想使用的字體，並輸入想展現的文字，最後產生 PNG 圖片並下載下來吧！'
+    },{
+      id: 'leetcode',
+      name: '運算練習',
+      description: '在輸入的最大值與最小值範圍中，隨機取得其中一數字。輸入一數字陣列，之後隨機排列。'
     }
   ] as LIST[]);
 </script>

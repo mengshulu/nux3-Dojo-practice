@@ -50,6 +50,14 @@ h2 {
   color: var(--font-color);
 }
 
+input[type=number]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+}
+// to always show:
+// input[type=number]::-webkit-inner-spin-button {
+//   opacity: 1;
+// }
+
 @font-face {
   font-family: mcdonald;
   src: url(../font/McDonald_s_Fries_Font.ttf);

@@ -12,7 +12,10 @@
         pattern="\d*"
       >
     </div>
+    <div class="start">
     <button class="btn" @click="getRandom">取得隨機陣列</button>
+    <button class="btn" @click="reset">重置</button>
+    </div>
     <div class="start">
       <p class="m-4">數列：</p>
       <p class="text-sky-800">{{ numsArray }}</p>
@@ -24,9 +27,8 @@
 const arrayLength = ref(10);
 const getRandomNum = inject('getRandom');
 const numsArray = ref([]);
-watch(arrayLength, () => {
-  numsArray.value = [... new Array(arrayLength.value)].map((item, index) => index + 1);
-},{
+const reset = () => numsArray.value = [... new Array(arrayLength.value)].map((item, index) => index + 1);
+watch(arrayLength, () => reset(),{
   immediate: true
 });
 const getRandom = () => {

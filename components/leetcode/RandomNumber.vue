@@ -32,20 +32,20 @@
 const maxValue = ref(1);
 const minValue = ref(0);
 const randomNumber = ref(null);
-let isCheckMin = false;
-let isCheckMax = false;
+let isChecking = false;
+const actionTime = 1000;
 
 watch(
   minValue,
   () => {
-    if (!isCheckMin) {
-      isCheckMin = true;
+    if (!isChecking) {
+      isChecking = true;
       setTimeout(() => {
         if (maxValue.value <= minValue.value) {
           maxValue.value = minValue.value + 5;
         }
-        isCheckMin = false;
-      }, 200);
+        isChecking = false;
+      }, actionTime);
     }
   }
 );
@@ -53,16 +53,14 @@ watch(
 watch(
   maxValue,
   () => {
-    console.log(isCheckMax);
-    if (!isCheckMax) {
-      isCheckMax = true;
+    if (!isChecking) {
+      isChecking = true;
       setTimeout(() => {
         if (maxValue.value <= minValue.value) {
-          console.log(maxValue.value);
-          maxValue.value = minValue.value + 1;
+          minValue.value = maxValue.value - 5;
         }
-        isCheckMax = false;
-      }, 500);
+        isChecking = false;
+      }, actionTime);
     }
   }
 );

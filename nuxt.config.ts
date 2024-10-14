@@ -20,7 +20,8 @@ const config: NuxtConfig = {
     head: {
       title: "Shu's Page",
       meta: [
-        { name: 'description', content: 'Practice of nuxt3 , vue3 and typescript' }
+        { name: 'description', content: 'Practice of nuxt3 , vue3 and typescript' },
+        { name: 'viewport', content: 'width=device-width, initial-scale=1, user-scalable=no' }
       ],
       link: [
         { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20,100,1,200', crossorigin: 'anonymous' }

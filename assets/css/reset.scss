@@ -84,3 +84,7 @@ input[type=number]::-webkit-inner-spin-button {
 .font-tegaki {
   font-family: 'tegaki';
 }
+
+html, body {
+  touch-action: manipulation;
+}

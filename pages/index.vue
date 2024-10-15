@@ -72,6 +72,11 @@
       id: 'leetcode',
       name: '運算練習',
       description: '在輸入的最大值與最小值範圍中，隨機取得其中一數字。輸入一數字陣列，之後隨機排列。'
+    },
+    {
+      id: 'qrcode',
+      name: 'QR Code Generator 電子發票判讀',
+      description: '掃描電子發票的ＱＲＣＯＤＥ，得到發票詳細資訊'
     }
   ] as LIST[]);
 </script>

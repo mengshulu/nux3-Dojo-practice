@@ -10,7 +10,7 @@ export const useHtml5QrCode = (domId: string) => {
     const start = (qrCodeSuccessCallback: () => void) => {
 
         // 相機brcode顯示設定
-        const brConfig = { fps: 10, qrbox: { width: 300, height: 150 } };
+        const brConfig = { fps: 600, qrbox: { width: 300, height: 150 } };
         
         // 套件啟動相機function
         html5QrCode.start(

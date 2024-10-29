@@ -40,7 +40,6 @@
     </pre>
   </p> -->
   </div>
-  <p>{{ fromAPI }}</p>
 </template>
 
 <script lang="ts" setup>
@@ -50,6 +49,11 @@
     description: string;
   };
   const list = ref([
+    {
+      id: 'pythonxmongodb',
+      name: 'Python & MongoDB',
+      description: '使用 Python 與 MongoDB Atlas 進行資料操作, 並用 vercel 部署, 使用 Flask 寫的 api'
+    },
     {
       id: 'map',
       name: 'Leaflet',
@@ -80,22 +84,6 @@
       description: '掃描電子發票的ＱＲＣＯＤＥ，得到發票詳細資訊'
     }
   ] as LIST[]);
-
-  const fromAPI = ref('');
-  const testAPI = async () => {
-    try {
-      const response = await fetch('https://my-python-app-rho.vercel.app/api/hello');
-      if (!response.ok) {
-        throw new Error(`HTTP error! status: ${response.status}`);
-      }
-      const data = await response.json();
-      fromAPI.value = data.message;
-      console.log(data);
-    } catch (error) {
-      console.error('Error:', error);
-    }
-  };
-  testAPI();
 </script>
 
 <style scoped lang="scss">
